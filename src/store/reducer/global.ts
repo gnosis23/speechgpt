@@ -24,7 +24,7 @@ export const globalSlice = createSlice({
     },
     speech: {
       service: 'System',
-      systemLanguage: 'en',
+      systemLanguage: 'cmn-Hans-CN',
       systemVoice: 'Daniel',
       systemRate: 1,
       systemPitch: 1,
