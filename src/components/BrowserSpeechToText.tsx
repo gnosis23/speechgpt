@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {} from './Notification';
 
 interface BrowserSpeechToTextProps {
   isListening: boolean;
   language: string;
   setIsListening: (update: ((prevIsListening: boolean) => boolean) | boolean) => void;
   setTranscript: (update: ((prevTranscript: string) => string) | string) => void;
+  setIntermTranscript: (update: ((prevTranscript: string) => string) | string) => void;
   notify: any;
 }
 
@@ -20,6 +20,7 @@ const BrowserSpeechToText: React.FC<BrowserSpeechToTextProps> = ({
   language,
   setIsListening,
   setTranscript,
+  setIntermTranscript,
   notify,
 }) => {
   const [recognition, setRecognition] = useState<SpeechRecognition | null>(globalRecognition);
@@ -32,6 +33,7 @@ const BrowserSpeechToText: React.FC<BrowserSpeechToTextProps> = ({
 
       recognition.onresult = (event: SpeechRecognitionEvent) => {
         let currentTranscript = '';
+        let finalTranscript = '';
 
         for (let i = event.resultIndex; i < event.results.length; i++) {
           const result = event.results[i];
@@ -39,10 +41,13 @@ const BrowserSpeechToText: React.FC<BrowserSpeechToTextProps> = ({
 
           if (result.isFinal) {
             setTranscript(text);
+            finalTranscript += text;
           } else {
             currentTranscript += text;
           }
         }
+
+        setIntermTranscript(finalTranscript + currentTranscript);
       };
 
       // @ts-ignore

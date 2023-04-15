@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import SpinnerIcon from './Icons/SpinnerIcon';
 
 interface InputPanelProps {
+  intermTranscript: string;
   status: string;
   disableMicrophone: boolean;
   startRecording: () => void;
@@ -22,6 +23,7 @@ interface InputPanelProps {
 }
 
 function InputPanel({
+  intermTranscript,
   status,
   disableMicrophone,
   startRecording,
@@ -130,8 +132,10 @@ function InputPanel({
         onKeyDown={handleInputKeyDown}
         maxRows={5}
       />
-      <div className="flex flex-row space-x-2 justify-end">
-        {/*<div className="self-end text-gray-700">{i18n.t('common.status')}: {status}</div>*/}
+      <div className="flex flex-row space-x-2 justify-end items-center content-center">
+        {status === 'recording' && (
+          <div className="text-gray-700">{intermTranscript}</div>
+        )}
         <RecordButton />
         <SendButton />
       </div>

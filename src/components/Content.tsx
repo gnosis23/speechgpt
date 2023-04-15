@@ -60,6 +60,7 @@ const Content: React.FC<ContentProps> = ({ notify }) => {
 
   // speech to text transcript
   const [transcript, setTranscript] = useState('');
+  const [intermTranscript, setIntermTranscript] = useState('');
   // speech to text listening status
   const [isListening, setIsListening] = useState(false);
 
@@ -400,6 +401,7 @@ const Content: React.FC<ContentProps> = ({ notify }) => {
           language={voice.systemLanguage}
           setIsListening={setIsListening}
           setTranscript={setTranscript}
+          setIntermTranscript={setIntermTranscript}
           notify={notify}
         />
       )}
@@ -447,6 +449,7 @@ const Content: React.FC<ContentProps> = ({ notify }) => {
           finished={finished}
         />
         <InputPanel
+          intermTranscript={intermTranscript}
           status={status}
           disableMicrophone={disableMicrophone}
           userInput={input}
