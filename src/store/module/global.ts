@@ -52,7 +52,7 @@ const defaultGlobalState = {
   },
   voice: {
     service: 'System',
-    systemLanguage: 'en-US',
+    systemLanguage: 'cmn-Hans-CN',
     azureLanguage: 'en-US',
     autoStart: false,
     startTime: 1,
