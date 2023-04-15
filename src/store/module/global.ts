@@ -53,7 +53,7 @@ const defaultGlobalState = {
   voice: {
     service: 'System',
     systemLanguage: 'cmn-Hans-CN',
-    azureLanguage: 'en-US',
+    azureLanguage: 'cmn-Hans-CN',
     autoStart: false,
     startTime: 1,
   },
