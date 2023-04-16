@@ -69,14 +69,19 @@ const BrowserSpeechToText: React.FC<BrowserSpeechToTextProps> = ({
   }, [isListening, language, recognition]);
 
   useEffect(() => {
-    if (isListening) {
-      if (recognition) {
-        recognition.start();
+    try {
+      if (isListening) {
+        if (recognition) {
+          recognition.start();
+        }
+      } else {
+        if (recognition) {
+          recognition.stop();
+        }
       }
-    } else {
-      if (recognition) {
-        recognition.stop();
-      }
+    } catch (err) {
+      console.log(err);
+      notify.errorBuiltinSpeechRecognitionNotify();
     }
   }, [isListening, recognition]);
 
