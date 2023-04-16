@@ -12,7 +12,7 @@ export const globalSlice = createSlice({
       awsRegion: '',
       awsKeyId: '',
       awsKey: '',
-      azureRegion: '',
+      azureRegion: 'southeastasia',
       azureKey: '',
     },
     chat: {
@@ -35,9 +35,9 @@ export const globalSlice = createSlice({
       azureVoice: '',
     },
     voice: {
-      service: 'System',
+      service: 'Azure Speech to Text',
       systemLanguage: 'cmn-Hans-CN',
-      azureLanguage: 'cmn-Hans-CN',
+      azureLanguage: 'zh-CN',
       autoStart: false,
       startTime: 1,
     },

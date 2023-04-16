@@ -28,7 +28,7 @@ const defaultGlobalState = {
     awsRegion: '',
     awsKeyId: '',
     awsKey: '',
-    azureRegion: '',
+    azureRegion: 'southeastasia',
     azureKey: '',
   },
   chat: {
@@ -51,9 +51,9 @@ const defaultGlobalState = {
     azureVoice: '',
   },
   voice: {
-    service: 'System',
+    service: 'Azure Speech to Text',
     systemLanguage: 'cmn-Hans-CN',
-    azureLanguage: 'cmn-Hans-CN',
+    azureLanguage: 'zh-CN',
     autoStart: false,
     startTime: 1,
   },
