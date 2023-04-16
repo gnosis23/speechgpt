@@ -30,20 +30,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({}) => {
       </SettingGroup>
 
       <SettingDivider />
-      <SettingTitle text={i18n.t('setting.about.link') as string} />
-      <SettingGroup>
-        <div className={' text-left ml-0.5 text-gray-700'}>
-          Github:{' '}
-          <a
-            href="https://github.com/meiwupangzi"
-            className="inline underline hover:text-indigo-600"
-          >
-            https://github.com/meiwupangzi
-          </a>
-        </div>
-      </SettingGroup>
-
-      <SettingDivider />
       <SettingTitle text={i18n.t('setting.about.version') as string} />
       <SettingGroup>
         <div className={'flex space-y-2 text-left ml-0.5 text-gray-700'}>Version: v0.3.0</div>
