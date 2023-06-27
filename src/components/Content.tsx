@@ -461,6 +461,9 @@ const Content: React.FC<ContentProps> = ({ notify }) => {
           waiting={waiting}
           notify={notify}
         />
+        <div className="text-center text-gray-300">
+          <a href="https://beian.miit.gov.cn/#/Integrated/index">鲁ICP备2023003423号-1</a>
+        </div>
       </div>
     </div>
   );
