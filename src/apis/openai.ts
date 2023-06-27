@@ -1,6 +1,7 @@
 export default async function sendRequest(
   messages: string[],
   openaiApiKey: string,
+  openaiHost: string,
   openaiModel: string,
   callback: (data: any) => void
 ) {
@@ -16,7 +17,9 @@ export default async function sendRequest(
     }),
   };
 
-  fetch('/api/v1/chat/completions', requestOptions)
+  const openaiHostAddress = openaiHost || 'api.openai.com';
+
+  fetch('https://' + openaiHostAddress + '/v1/chat/completions', requestOptions)
     .then(response => response.json())
     .then(data => {
       callback(data);

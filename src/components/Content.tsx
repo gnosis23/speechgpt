@@ -192,6 +192,7 @@ const Content: React.FC<ContentProps> = ({ notify }) => {
       sendRequest(
         conversationsToSent as any,
         openaiApiKey,
+        openaiApiHost,
         openaiApiModel,
         (data: any) => {
           setStatus('idle');
